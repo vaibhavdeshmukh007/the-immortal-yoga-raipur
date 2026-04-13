@@ -57,6 +57,19 @@ function scrollActive(){
 }
 window.addEventListener('scroll', scrollActive)
 
+/*==================== PROGRAMS CARD INTERACTIVITY ====================*/
+const programCards = document.querySelectorAll('.programs__card')
+
+programCards.forEach(card => {
+    card.addEventListener('click', () => {
+        // Remove featured class from all cards
+        programCards.forEach(c => c.classList.remove('featured'))
+        
+        // Add featured class to the clicked card
+        card.classList.add('featured')
+    })
+})
+
 /*==================== SCROLL REVEAL ANIMATION ====================*/
 const sr = ScrollReveal({
     origin: 'top',
@@ -72,3 +85,34 @@ sr.reveal(`.about__data, .about__img-wrapper`, {interval: 100})
 sr.reveal(`.programs__card`, {interval: 100})
 sr.reveal(`.contact__info, .contact__form`, {interval: 100})
 sr.reveal(`.footer__content`, {interval: 100})
+
+/*==================== CONTACT FORM AJAX ====================*/
+const contactForm = document.getElementById('contact-form'),
+      contactSuccess = document.getElementById('contact-success'),
+      contactButton = document.getElementById('contact-button')
+
+if (contactForm) {
+    contactForm.addEventListener('submit', e => {
+        e.preventDefault()
+
+        contactButton.innerText = 'Sending...'
+        contactButton.disabled = true
+
+        const formData = new FormData(contactForm)
+        
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
+            contactForm.classList.add('hide-form')
+            contactSuccess.classList.add('show-success')
+        })
+        .catch(error => {
+            alert('Oops! There was an error: ' + error)
+            contactButton.innerText = 'Send Message'
+            contactButton.disabled = false
+        })
+    })
+}

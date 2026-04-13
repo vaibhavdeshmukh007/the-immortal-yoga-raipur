@@ -114,7 +114,7 @@
                     <h1 class="home__title">IMMORTALIZE YOUR HEALTH</h1>
                     <p class="home__description">
                         Join The Immortal Yoga Academy in Raipur for a transformative journey. Authentic Yoga, Aerial
-                        Fitness, and Advanced Meditation under **Mr. Bhupendra Sahu**.
+                        Fitness, and Advanced Meditation under <strong>Mr. Bhupendra Sahu</strong>.
                     </p>
                     <div class="home__btns">
                         <a href="https://wa.me/917441155307" class="button">Book Free Trial</a>
@@ -262,7 +262,7 @@
                     </div>
                 </div>
 
-                <form method="POST" action="/" class="contact__form" netlify data-netlify-honeypot="bot-field" name="contact">
+                <form method="POST" action="/" class="contact__form" id="contact-form" netlify data-netlify-honeypot="bot-field" name="contact">
                     <input type="hidden" name="form-name" value="contact" />
                     <div class="contact__inputs">
                         <input type="text" placeholder="Name" class="contact__input" required name="name">
@@ -271,12 +271,18 @@
                     <input type="text" placeholder="Subject" class="contact__input" required name="subject">
                     <textarea name="message" placeholder="Message" class="contact__input contact__area"
                         required></textarea>
-                    <button class="button contact__button">Send Message</button>
+                    <button class="button contact__button" id="contact-button">Send Message</button>
                     <!-- Netlify Honeypot -->
                     <p class="hidden" style="display:none">
                         <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
                     </p>
                 </form>
+
+                <div class="contact__success" id="contact-success">
+                    <i class="ri-checkbox-circle-line"></i>
+                    <h3 class="contact__success-title">Thank You!</h3>
+                    <p class="contact__success-description">Your message has been sent successfully. We'll get back to you soon.</p>
+                </div>
             </div>
 
             <div class="contact__map">

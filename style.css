@@ -516,6 +516,39 @@ img {
     width: 100%;
 }
 
+.contact__success {
+    display: none;
+    text-align: center;
+    background-color: var(--container-color);
+    padding: 3rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.contact__success i {
+    font-size: 4rem;
+    color: var(--first-color);
+    margin-bottom: var(--mb-1);
+}
+
+.contact__success-title {
+    font-size: var(--h2-font-size);
+    margin-bottom: var(--mb-0-5);
+}
+
+.contact__success-description {
+    font-size: var(--normal-font-size);
+    color: var(--text-color-light);
+}
+
+.show-success {
+    display: block !important;
+}
+
+.hide-form {
+    display: none !important;
+}
+
 .contact__map {
     margin-top: 3rem;
     border-radius: 1rem;
