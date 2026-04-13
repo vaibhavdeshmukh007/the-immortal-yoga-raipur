@@ -1,0 +1,11 @@
+[build]
+  publish = "."
+
+[[plugins]]
+  package = "@netlify/plugin-sitemap"
+  [plugins.inputs]
+    buildDir = "."
+
+# Forms configuration (handled in index.html, but generic settings here)
+[forms]
+  service = "true"
