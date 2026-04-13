@@ -262,7 +262,8 @@
                     </div>
                 </div>
 
-                <form action="#" class="contact__form" data-netlify="true" name="contact">
+                <form method="POST" action="/" class="contact__form" netlify data-netlify-honeypot="bot-field" name="contact">
+                    <input type="hidden" name="form-name" value="contact" />
                     <div class="contact__inputs">
                         <input type="text" placeholder="Name" class="contact__input" required name="name">
                         <input type="email" placeholder="Email" class="contact__input" required name="email">
