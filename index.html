@@ -234,6 +234,39 @@
             </div>
         </section>
 
+        <!-- Zen Zone Game Section -->
+        <section class="zen section container" id="zen-zone">
+            <h2 class="section__title center">Zen Memory Match</h2>
+            <p class="zen__description center">Relax your mind and find the matching pairs of yoga symbols. A focused mind is a strong mind.</p>
+            
+            <div class="zen__container">
+                <div class="zen__stats">
+                    <div class="zen__stat">
+                        <span class="zen__stat-label">Time:</span>
+                        <span class="zen__stat-value" id="game-time">00:00</span>
+                    </div>
+                    <div class="zen__stat">
+                        <span class="zen__stat-label">Moves:</span>
+                        <span class="zen__stat-value" id="game-moves">0</span>
+                    </div>
+                    <button class="button button--ghost zen__reset" id="game-reset">
+                        <i class="ri-refresh-line"></i> Reset
+                    </button>
+                </div>
+
+                <div class="memory-game" id="memory-game">
+                    <!-- Cards will be injected by JavaScript -->
+                </div>
+
+                <div class="zen__win-message" id="zen-win">
+                    <i class="ri-mickey-line"></i>
+                    <h3>Namaste!</h3>
+                    <p>Your mind is focused and clear. Ready for your actual practice?</p>
+                    <button class="button" id="play-again">Play Again</button>
+                </div>
+            </div>
+        </section>
+
         <!-- Contact Section -->
         <section class="contact section container" id="contact">
             <h2 class="section__title center">Get In Touch</h2>
